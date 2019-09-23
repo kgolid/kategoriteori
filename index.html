@@ -34,6 +34,12 @@ background-size: cover
 
 ---
 
+## Hvorfor bry seg om kategoriteori?
+
+???
+- Vanskelig spørsmål
+---
+
 ## Hva er programmering?
 
 ???
@@ -65,6 +71,8 @@ background-size: cover
 ???
 - Snakker ofte om pen kode.
 - Pen / elegant kode = delt opp i logiske biter.
+- Avansert prosedyre => Funksjoner
+- Avansert struktur => Objekter / Typer
 
 ---
 
@@ -99,11 +107,98 @@ background-size: cover
 
 ---
 
+# Hva er en kategori?
 
+--
+
+En haug prikker med piler mellom seg
+
+???
+- Bevisst vagt.
+- Skal kunne innbefatte 'alle' andre strukturer i matematikken.
+- Mengder er f.eks. begrenset under ZFC
+---
+
+### Kategori
+En samling objekter og morfismer ...
+
+--
+
+... slik at det for ethvert objekt a, finnes en identitetsmorfisme id slik at id.a = a.id = a ...
+
+--
+
+... og slik at det for ethvert par av morfismer f,g finnes en komposisjon f.g slik at (f.g).h = f.(g.h) for enhver h. 
+
+---
+
+### Objekter og morfismer kan være:
+Mengder og Funksjoner (Set)
+
+Byer og Veier
+
+Personer og Relasjoner
+
+Kategorier og Funktorer (Cat / CAT)
+
+???
+- Kategorier kan bygges opp av hva som helst.
+- Må bare tilfredstille kravene.
+
+--
+
+Typer og Funksjoner (f.eks. Hask)
+
+---
+
+### Typer = Mengder
+
+???
+- En Type er egentlig bare en mengde med verdier.
+- Set er altså isomorf med Hask (med et lite unntak: _|_).
+
+---
+
+### Ø = Void
+### {*} = ()
+### {0,1} = Bool
+
+???
+- Set gir oss det vi trenger for å resonnere rundt Haskell.
+- Tomt sett tilsvarer Void i Haskell
+- Det går i teorien en funksjon fra Void til hva som helst, men i praksis kan den ikke kjøres.
+---
+
+### Konsepter i mengdelære... 
+### ... definert med kategorier!
+
+???
+- Resonnerer om egenskaper og konsepter uten å bry oss om innholdet i objektene, kun relasjonene.
+- Ekvivalent med å resonnere om typers / objekters egenskaper uten å bry oss om implementasjon, kun ved å se på "interfaces".
+- Vi bruker teleskop på de universelle strukturene, heller enn å bruke mikroskop på enkeltobjektene og -pilene.
+
+---
+
+### Konsept i mengdelære: Bijeksjon
+"Gitt funksjonen f:A->B, så er f en bijeksjon om det finnes en g:B->A slik at Ax g.f(x) = x".
+
+--
+
+### Kategoriteori: Isomorfisme
+"Gitt morfismen f:A->B", så er f en isomorfisme om det finnes en g:B->A slik at g.f = id<sub>A</sub> 
+
+---
+
+### Hvordan hjelper dette oss?
+
+???
+- Gir et bevis for korrekthet
+- Programmer er bare komponerte funksjoner, altså en pil i Hask.
+
+---
 
 .content[
-## Takk for meg!
-@kgolid - .snd[generated.space]]
+## Takk for meg!]
     </textarea>
     <script src="remark-latest.min.js"></script>
     <script>
