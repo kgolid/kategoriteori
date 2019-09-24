@@ -4,21 +4,27 @@
     <title>IT-dagene 2019</title>
     <meta charset="utf-8">
     <style>
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
       @import url(https://fonts.googleapis.com/css?family=Tajawal:400,500,800&display=swap);
+      @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap');
 
       * { margin: 0; padding: 0; box-sizing: border-box; }
       body { font-family: 'Tajawal', Helvetica, Arial, sans-serif; }
       h1, h2, h3 { font-weight: 800; text-transform:uppercase; }
       a { color:inherit; }
 
+      .title { font-family: 'Luckiest Guy'; letter-spacing: 0.05em; font-size: 63pt; }
+
       .list { display:inline-block; width:36%; padding:15px; margin-top: 10px; text-align: left;}
       .list ul { padding-left: 25px; }
       .list ul li { font-size: 16pt; font-weight: 500; }
 
-      .pic { display: inline-block; width: 80%; }
-      .pic img { width:100%; }
+      .table { display:inline-block; max-width:50%; padding:15px; margin-top: 10px; text-align: left;}
+      .table td, .table th {padding: 5px 15px; }
+
+      .pic { display: inline-block; max-width: 75%; }
+      .pic.square { max-width: 60%; }
+      .pic.portrait { max-width: 40%; }
+      .pic img { width:100%; border-radius: 15px; }
 
 
     </style>
@@ -35,11 +41,11 @@ background-size: cover
 
 ---
 
-# Kategoriteori
+# .title[Kategoriteori]
 
 ---
 
-# Hva er kategoriteori?
+## Hva er kategoriteori?
 
 ???
 - På samme måte som vi i set-teori/mengdelære ser på set/mengder, ser vi i kategoriteori på kategorier.
@@ -47,14 +53,12 @@ background-size: cover
 ---
 
 .pic[![](resources/nonsense.png)]
-
 ---
 
 ## Hva er en kategori?
-
 --
 
-En haug prikker med piler mellom seg
+#### En haug prikker med piler mellom seg
 
 ???
 - Bevisst vagt.
@@ -62,28 +66,38 @@ En haug prikker med piler mellom seg
 - Mengder er f.eks. begrenset under ZFC
 ---
 
-### Kategori
-En samling objekter og morfismer ...
+.pic[![](resources/catintro.png)]
+---
 
---
+.pic[![](resources/catintro2.png)]
+---
 
-... slik at det for ethvert objekt a, finnes en identitetsmorfisme id slik at id.a = a.id = a ...
+## slik at ...
 
---
+---
 
-... og slik at det for ethvert par av morfismer f,g finnes en komposisjon f.g slik at (f.g).h = f.(g.h) for enhver h. 
+.pic[![](resources/catintro_id.png)]
+---
 
+.pic[![](resources/catintro_id2.png)]
+---
+
+.pic[![](resources/catintro_assoc.png)]
+---
+
+.pic[![](resources/catintro_assoc2.png)]
+---
+
+layout: true
+background-color: #f66
+class: center, middle
+background-size: cover
 ---
 
 ## Hvorfor bry seg om kategoriteori?
 
 ???
 - Vanskelig spørsmål
----
-layout: true
-background-color: #f66
-class: center, middle
-background-size: cover
 ---
 
 ## Hva er programmering?
@@ -109,26 +123,26 @@ background-size: cover
 
 ---
 
-## 7 &pm; 2
+# 7 &pm; 2
 
 ???
-- Kjent psykologisk avhandling.
+- Miller's Law
+- Kjent psykologisk avhandling fra 1956.
 - Mennesker er dumme.
 - Holder kun styr på ~7 chunks med info av gangen.
 
 ---
 
-[Bilde av elegant kode]
+.pic.portrait[![](resources/chunks_neat.png)]
 
 ???
 - Snakker ofte om pen kode.
 - Pen / elegant kode = delt opp i logiske biter.
 - Avansert prosedyre => Funksjoner
 - Avansert struktur => Objekter / Typer
-
 ---
 
-[Bilde av lang funksjon]
+.pic.portrait[![](resources/chunks_messy.png)]
 
 ???
 - "Okay, disse 5 linjene gjør egentlig bare X, og disse 8 linjene verifiserer bare Y".
@@ -136,7 +150,7 @@ background-size: cover
 
 ---
 
-## Komposisjon er sentralt i programmering
+## Komposisjon
 
 ???
 - Kanskje det mest sentrale.
@@ -158,47 +172,62 @@ background-size: cover
 ## Komposisjon _er_ kategoriteori
 
 ---
+layout: true
+template: defaultlayout
+---
 
-### Objekter og morfismer kan være:
-Mengder og Funksjoner (Set)
-
-Byer og Veier
-
-Personer og Relasjoner
-
-Kategorier og Funktorer (Cat / CAT)
+# Eksempler på kategorier
 
 ???
 - Kategorier kan bygges opp av hva som helst.
 - Må bare tilfredstille kravene.
+---
+## Set
+.pic[![](resources/cat_ex1.png)]
+---
 
---
+.pic[![](resources/cat_ex2.png)]
+---
 
-Typer og Funksjoner (f.eks. Hask)
+.pic[![](resources/cat_ex3.png)]
+---
 
+## Hask
+.pic[![](resources/cat_ex4.png)]
 ---
 
 ### Typer er Mengder
+--
+
 ## Hask &#61; Set
 
 ???
 - En Type er egentlig bare en mengde med verdier.
 - Set er altså isomorf med Hask (med et lite unntak: _|_).
-
 ---
 
-### Ø = Void
-### {*} = ()
-### {0,1} = Bool
+### Ø = `Void`
+### {1} = `()`
+### {0,1} = `Bool`
 
 ???
 - Set gir oss det vi trenger for å resonnere rundt Haskell.
 - Tomt sett tilsvarer Void i Haskell
 - Det går i teorien en funksjon fra Void til hva som helst, men i praksis kan den ikke kjøres.
+- () brukes for å konstruere konstant-funksjoner.
 ---
 
-### Konsepter i mengdelære... 
-### ... definert med kategorier!
+## Konsepter og konstruksjoner
+--
+.pic[![](resources/concepts1.png)]
+---
+
+## Konsepter og konstruksjoner
+.pic[![](resources/concepts2.png)]
+---
+
+## Konsepter og konstruksjoner
+.pic[![](resources/concepts3.png)]
 
 ???
 - Resonnerer om egenskaper og konsepter uten å bry oss om innholdet i objektene, kun relasjonene.
@@ -209,22 +238,29 @@ Typer og Funksjoner (f.eks. Hask)
 ---
 
 ### Bijection
-"Gitt funksjonen f:A->B, så er f en bijeksjon om det finnes en g:B->A slik at Ax g.f(x) = x".
-
---
+.pic[![](resources/bijection1.png)]
+---
 
 ### Isomorphism
-"Gitt morfismen f:A->B", så er f en isomorfisme om det finnes en g:B->A slik at g.f = id<sub>A</sub> 
-
+.pic[![](resources/bijection2.png)]
 ---
 
 ### Surrjection
-
+.pic.square[![](resources/surrjection1.png)]
 ---
 
-### Injection 
-
+### Epimorphism
+.pic[![](resources/surrjection2.png)]
 ---
+
+### Injection
+.pic.square[![](resources/injection1.png)]
+---
+
+### Monomorphism
+.pic[![](resources/injection2.png)]
+---
+
 
 ### Initial object
 
@@ -235,6 +271,7 @@ Typer og Funksjoner (f.eks. Hask)
 ---
 
 ### Product
+.pic[![](resources/product1.png)]
 
 ---
 
@@ -256,9 +293,18 @@ Typer og Funksjoner (f.eks. Hask)
 - Beviser korrekthet]
 ---
 
-## Curry-Howard-Lambek correspondence
-### Logikk = Programmering = Kategoriteori
-### Program = Bevis = Kategori
+### Curry-Howard-Lambek correspondence
+.table[
+| Logikk          | Programmering   | Kategoriteori   |
+| --------------: | --------------: | --------------: |
+| Bevis           | Program         | Kategori        |
+| Implikasjon     | Funksjon        | Morfisme        |
+| Konjunksjon     | Produkt         | Produkt         |
+| Sant utrykk     | Unit            | Terminal        |
+| Usant utrykk    | Bottom          | Initiell        |
+]
+
+---
 
 .content[
 ## Takk for meg!]
